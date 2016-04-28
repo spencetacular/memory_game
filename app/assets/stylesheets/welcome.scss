@@ -1,13 +1,21 @@
 .boxes{
-  height: 200px;
-  width: 200px;
-  border: 10px solid black;
+  height: 100px;
+  width: 100px;
+  border: 5px solid black;
+  margin: 10px;
+
 }
 
-.hide_text{
+.image-card{
+	max-width: 20%;
+	border: 5px solid black;
+  margin: 10px;
+}
 
+
+
+.hide_text{
  display: none;
-	
 }
 
 .matched{
@@ -16,6 +24,3 @@
 
 
 
-.box_text{
-
-}

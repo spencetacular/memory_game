@@ -8,10 +8,6 @@ $(document).ready(function(){
 	var myArray = ['1','1','1','1','2','2','2',
 			'2','3','3','3','3','4','4','4','4'];
 
-	//for testing completed
-	// var myArray = ['1','1','1','1','1','1','1',
-	// 		'1','1','1','1','1','1','1','1','1'];
-
 	populateBoard();
 
 	function shuffle(o){
@@ -26,6 +22,9 @@ $(document).ready(function(){
 			$(this).children(0).html(myArray.pop());
 			$(this).children(0).addClass('hide_text');
 			$(this).children(0).removeClass('matched');
+			if(myArray.pop() == 1){
+				$(this).children(0).attr("src", "<%= image_path symbol_1.png" )
+			}
 
 		})
 		matchesFoundTicker = 0;
@@ -43,7 +42,7 @@ $(document).ready(function(){
 	//check if box has already been clicked
 	function isShowing(number_class){
 		if (number_class != 'hide_text') {
-			alert("Is showing");
+			alert("This one is already showing");
 			return false;
 
 		}else{
@@ -93,15 +92,12 @@ $(document).ready(function(){
 		};
 	}
 
-
-
 	$('.boxes').click(function(){
 
 		var currentClass = $(this).children(0).attr('class');
 			if (isShowing(currentClass) ){
 				$(this).children(0).toggleClass('hide_text');
 				clickTracker();
-
 			};
 
 		 if (ticker == 1) {
@@ -113,7 +109,6 @@ $(document).ready(function(){
 
 		 	checkMatch(firstNumberClicked, secondNumberClicked);
 		 	checkCompleted();
-
 		};
 
 	})
