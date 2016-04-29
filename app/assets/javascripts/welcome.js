@@ -22,11 +22,7 @@ $(document).ready(function(){
 			$(this).children(0).html(myArray.pop());
 			$(this).children(0).addClass('hide_text');
 			$(this).children(0).removeClass('matched');
-			if(myArray.pop() == 1){
-				$(this).children(0).attr("src", "<%= image_path symbol_1.png" )
-			}
-
-		})
+		});
 		matchesFoundTicker = 0;
 	}
 
@@ -69,7 +65,7 @@ $(document).ready(function(){
 
 				});
 				
-				alert("match");
+				alert("Match!");
 				//this should be moved
 				clickTracker();
 				matchesFoundTicker++;
